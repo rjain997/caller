@@ -1,5 +1,4 @@
 name: Call Reusable_PAT_Workflow
-
 on:
     push
 
