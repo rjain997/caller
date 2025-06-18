@@ -5,7 +5,7 @@ on:
 
 jobs:
     use-workflow:
-        uses: https://github.com/rjain997/called/blob/main/.github/workflows/called.yml@main
+        uses: rjain997/called/blob/main/.github/workflows/called.yml@main
         secrets: inherit
 
 
