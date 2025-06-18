@@ -1,20 +1,21 @@
 name: Call Reusable_PAT_Workflow
 
 on:
-    workflow_dispatch
+    push
 
 jobs:
     use-workflow:
-        uses:
-            
-            secret:inherit
+        uses: https://github.com/rjain997/called/blob/main/.github/workflows/called.yml@main
+        secrets: inherit
+
+
     first_flow:
         runs-on: self-hosted
         needs: use-workflow
         steps:
             - name: Use outputs from reusable workflow
               env:
-                PAT: ${{needs.use-workflow.outputs.first_job}}
+                PAT: ${{secrets.MYPAT}}
               run: |
                 echo "Calling GitHub API with reusable flow"
                 curl -L \
